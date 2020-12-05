@@ -15,6 +15,26 @@ namespace AuctionConsoleApp
             var configJson = GetContentsFromTextFile(configLocation);
             var config = ParseJsonToConfig(configJson);
             var input = ParseJsonToInputList(inputJson);
+
+            var auctionProcessor = new AuctionProcessor(config);
+            var result = auctionProcessor.ProcessResult(input);
+            
+            Console.WriteLine(ParseResultToJson(result));
+        }
+
+        private string ParseResultToJson(IList<IList<Bid>> result)
+        {
+            try
+            {
+                return JsonConvert.SerializeObject(result);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Results could not be parsed to json.");
+                Console.WriteLine(ex.Message);
+            }
+
+            return string.Empty;
         }
 
         private string GetContentsFromTextFile(string configLocation)
