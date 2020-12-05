@@ -1,19 +1,30 @@
 ﻿using System;
+using System.Text;
 
 namespace AuctionConsoleApp
 {
     class Program
     {
+        private const string CONFIG_PATH = "/auction/config.json";
+        
         static void Main(string[] args)
         {
+            var inputParameter = GetInputParameter();
+            var service = new AuctionService();
+            service.RunAuctionService(inputParameter, CONFIG_PATH);
+        }
 
-            string s;
-            while ((s = Console.ReadLine()) != null)
+        private static string GetInputParameter()
+        {
+            var inputStringBuilder = new StringBuilder();
+            var input = Console.In;
+
+            while (input.Peek() != -1) 
             {
-                Console.WriteLine(s);
-            }
+                inputStringBuilder.Append(input.ReadLine());
+            };
 
-            Console.WriteLine("Hello World!");
+            return inputStringBuilder.ToString();
         }
     }
 }
