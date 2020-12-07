@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionConsoleApp", "AuctionConsoleApp\AuctionConsoleApp.csproj", "{67402DFB-2183-4737-961C-F7954AC71BF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionConsoleApp", "AuctionConsoleApp\AuctionConsoleApp.csproj", "{67402DFB-2183-4737-961C-F7954AC71BF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionConsoleAppTest", "AuctionConsoleAppTest\AuctionConsoleAppTest.csproj", "{EFB0AE4E-D946-453D-8764-9780C62EFAEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{67402DFB-2183-4737-961C-F7954AC71BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67402DFB-2183-4737-961C-F7954AC71BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67402DFB-2183-4737-961C-F7954AC71BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB0AE4E-D946-453D-8764-9780C62EFAEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB0AE4E-D946-453D-8764-9780C62EFAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB0AE4E-D946-453D-8764-9780C62EFAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB0AE4E-D946-453D-8764-9780C62EFAEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
