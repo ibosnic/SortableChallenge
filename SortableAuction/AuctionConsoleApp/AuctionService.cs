@@ -17,7 +17,7 @@ namespace AuctionConsoleApp
             var input = ParseJsonToInputList(inputJson);
 
             var auctionProcessor = new AuctionProcessor(config);
-            var result = auctionProcessor.ProcessResult(input);
+            var result = auctionProcessor.RunAuction(input);
             
             Console.WriteLine(ParseResultToJson(result));
         }

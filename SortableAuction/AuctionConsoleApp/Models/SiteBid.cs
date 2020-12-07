@@ -1,10 +1,13 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace AuctionConsoleApp.Models
 {
     public class SiteBid
     {
+        private HashSet<string> _units = new HashSet<string>();
+        
         [JsonProperty("site")]
         public string SiteName
         {
@@ -14,7 +17,10 @@ namespace AuctionConsoleApp.Models
         [JsonProperty("units")]
         public IList<string> Units
         {
-            get; set;
+            set
+            {
+                AddAllUnits(value);
+            }
         }
 
         [JsonProperty("bids")]
@@ -22,5 +28,21 @@ namespace AuctionConsoleApp.Models
         {
             get; set;
         }
+
+        private void AddAllUnits(IList<string> units)
+        {
+            _units = new HashSet<string>();
+
+            foreach (var unit in units)
+            {
+                _units.Add(unit);
+            }
+        }
+
+        public bool ContainsUnit(string name)
+        {
+            return _units.Contains(name);
+        }
+
     }
 }
