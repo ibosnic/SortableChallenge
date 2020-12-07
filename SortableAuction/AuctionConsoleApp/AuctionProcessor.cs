@@ -1,5 +1,4 @@
 ﻿using AuctionConsoleApp.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,8 +11,8 @@ namespace AuctionConsoleApp
 
         public AuctionProcessor(Config config)
         {
-            _sites = config.Sites.ToDictionary(x => x.Name, x => x);
-            _bidders = config.Bidders.ToDictionary(x => x.Name, x => x.Adjustment);
+            _sites = config.Sites != null ? config.Sites.ToDictionary(x => x.Name, x => x) : new Dictionary<string, Site>();
+            _bidders = config.Bidders != null ? config.Bidders.ToDictionary(x => x.Name, x => x.Adjustment) : new Dictionary<string, double>();
         }
 
         /// <summary>
