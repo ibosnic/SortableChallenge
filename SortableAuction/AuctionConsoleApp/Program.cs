@@ -5,6 +5,7 @@ namespace AuctionConsoleApp
 {
     class Program
     {
+        //hard coded path to the config file based off run command
         private const string CONFIG_PATH = "/auction/config.json";
         
         static void Main(string[] args)

@@ -9,7 +9,11 @@ namespace AuctionConsoleApp
 {
     public class AuctionService
     {
-
+        /// <summary>
+        /// Runs the auction service processing the bids and returning output of winning bids as a json string 
+        /// </summary>
+        /// <param name="inputJson">the json input of site bids</param>
+        /// <param name="configLocation">the config file location to get the json configuration</param>
         public void RunAuctionService(string inputJson, string configLocation)
         {
             var configJson = GetContentsFromTextFile(configLocation);

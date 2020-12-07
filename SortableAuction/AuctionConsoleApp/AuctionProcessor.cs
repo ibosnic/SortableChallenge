@@ -16,6 +16,10 @@ namespace AuctionConsoleApp
             _bidders = config.Bidders.ToDictionary(x => x.Name, x => x.Adjustment);
         }
 
+        /// <summary>
+        /// Process the auction for each site returning a list of winning bids for each site
+        /// </summary>
+        /// <param name="siteBids">the list of sites and there bids</param>
         public IList<IList<Bid>> RunAuction(IList<SiteBid> siteBids)
         {
             var results = new List<IList<Bid>>();
@@ -53,7 +57,7 @@ namespace AuctionConsoleApp
                     continue;
                 }
 
-                if (largestBids.ContainsKey(bid.Unit) && IsLargerThenLargestBid(currentBidderPrice, bidderAdjustment, largestBids[bid.Unit]))
+                if (largestBids.ContainsKey(bid.Unit) && IsLargerThanLargestBid(currentBidderPrice, bidderAdjustment, largestBids[bid.Unit]))
                 {
                     largestBids[bid.Unit] = bid;
                 }
@@ -67,7 +71,7 @@ namespace AuctionConsoleApp
             return largestBids.Select(x => x.Value).ToList();
         }
 
-        private bool IsLargerThenLargestBid(double currentBidderPrice, double bidderAdjustment, Bid largestBid)
+        private bool IsLargerThanLargestBid(double currentBidderPrice, double bidderAdjustment, Bid largestBid)
         {
             var currentLargestBidderPrice = largestBid.Price + (largestBid.Price * bidderAdjustment);
             return currentBidderPrice > currentLargestBidderPrice;
