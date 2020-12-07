@@ -16,10 +16,10 @@ namespace AuctionConsoleApp
         }
 
         /// <summary>
-        /// Process the auction for each site returning a list of winning bids for each site
+        /// Process each auction returning a list of winning bids fcr each.
         /// </summary>
-        /// <param name="siteBids">the list of sites and there bids</param>
-        public IList<IList<Bid>> RunAuction(IList<SiteBid> siteBids)
+        /// <param name="siteBids">the list of auctions and their bids</param>
+        public IList<IList<Bid>> RunAuctions(IList<SiteBid> siteBids)
         {
             var results = new List<IList<Bid>>();
 

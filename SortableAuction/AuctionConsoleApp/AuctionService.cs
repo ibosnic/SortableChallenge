@@ -10,7 +10,7 @@ namespace AuctionConsoleApp
     public class AuctionService
     {
         /// <summary>
-        /// Runs the auction service processing the bids and returning output of winning bids as a json string 
+        /// Runs the auction service processing the bids for each auction and returning output of winning bids as a json string 
         /// </summary>
         /// <param name="inputJson">the json input of site bids</param>
         /// <param name="configLocation">the config file location to get the json configuration</param>
@@ -21,7 +21,7 @@ namespace AuctionConsoleApp
             var input = ParseJsonToInputList(inputJson);
 
             var auctionProcessor = new AuctionProcessor(config);
-            var result = auctionProcessor.RunAuction(input);
+            var result = auctionProcessor.RunAuctions(input);
             
             Console.WriteLine(ParseResultToJson(result));
         }

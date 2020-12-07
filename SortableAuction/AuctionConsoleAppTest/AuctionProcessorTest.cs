@@ -24,48 +24,48 @@ namespace AuctionConsoleAppTest
         private const string UNKNOWN_BIDDER = "UknownBidder";
 
         [Fact]
-        public void TestRunAuction_WithOneSiteAndMultipleBids_ExpectedWinningBid()
+        public void TestRunAuctions_WithOneSiteAndMultipleBids_ExpectedWinningBid()
         {
             var config = CreateConfigWithOneSite();
             var siteBids = CreateBidsForOneSite();
 
-            var actual = new AuctionProcessor(config).RunAuction(siteBids);
+            var actual = new AuctionProcessor(config).RunAuctions(siteBids);
             var expected = CreateResultForOneSite();
 
             AssertResultEqual(expected, actual);
         }
 
         [Fact]
-        public void TestRunAuction_WithMultipleSitesAndBids_ExpectedWinningBids()
+        public void TestRunAuctions_WithMultipleSitesAndBids_ExpectedWinningBids()
         {
             var config = CreateConfigWithMultipleSites();
             var siteBids = CreateBidsForMultipleSites();
 
-            var actual = new AuctionProcessor(config).RunAuction(siteBids);
+            var actual = new AuctionProcessor(config).RunAuctions(siteBids);
             var expected = CreateResultForMultipleSite();
 
             AssertResultEqual(expected, actual);
         }
 
         [Fact]
-        public void TestRunAuction_WithInvalidSite_ExpectedEmptyList()
+        public void TestRunAuctions_WithInvalidSite_ExpectedEmptyList()
         {
             var config = CreateConfigWithOneSite();
             var siteBids = CreateBidsForOneSite();
             siteBids[0].SiteName = "INVALID_SITE_NAME";
 
-            var actual = new AuctionProcessor(config).RunAuction(siteBids);
+            var actual = new AuctionProcessor(config).RunAuctions(siteBids);
 
             AssertEmptyList(actual);
         }
 
         [Fact]
-        public void TestRunAuction_WithInvalidBids_ExpectedEmptyList()
+        public void TestRunAuctions_WithInvalidBids_ExpectedEmptyList()
         {
             var config = CreateConfigWithOneSite();
             var siteBids = CreateInvalidBidsForOneSite();
 
-            var actual = new AuctionProcessor(config).RunAuction(siteBids);
+            var actual = new AuctionProcessor(config).RunAuctions(siteBids);
 
             AssertEmptyList(actual);
         }
