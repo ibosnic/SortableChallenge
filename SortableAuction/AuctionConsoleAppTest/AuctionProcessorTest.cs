@@ -131,8 +131,8 @@ namespace AuctionConsoleAppTest
 
             var bids = new List<Bid>()
             {
-                CreateBid(BIDDER_ONE_NAME, UNIT_ONE_NAME, BID_ONE_PRICE),
-                CreateBid(BIDDER_ONE_NAME, UNIT_ONE_NAME, BID_TWO_PRICE)
+                CreateBid(BIDDER_ONE_NAME, UNIT_ONE_NAME, BID_TWO_PRICE),
+                CreateBid(BIDDER_ONE_NAME, UNIT_ONE_NAME, BID_ONE_PRICE)
             };
 
             return new List<SiteBid>

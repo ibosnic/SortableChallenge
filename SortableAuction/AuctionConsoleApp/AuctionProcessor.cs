@@ -57,7 +57,8 @@ namespace AuctionConsoleApp
                 {
                     largestBids[bid.Unit] = bid;
                 }
-                else
+                
+                if(!largestBids.ContainsKey(bid.Unit))
                 {
                     largestBids.Add(bid.Unit, bid);
                 }
