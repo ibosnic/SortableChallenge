@@ -23,7 +23,7 @@ namespace AuctionConsoleApp.Models
         }
 
         [JsonProperty("floor")]
-        public float Floor
+        public double Floor
         {
             get; set;
         }

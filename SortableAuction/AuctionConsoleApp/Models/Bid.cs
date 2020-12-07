@@ -18,7 +18,7 @@ namespace AuctionConsoleApp.Models
         }
 
         [JsonProperty("bid")]
-        public float Price
+        public double Price
         {
             get; set;
         }

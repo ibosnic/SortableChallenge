@@ -8,7 +8,7 @@ namespace AuctionConsoleApp
     public class AuctionProcessor
     {
         private readonly Dictionary<string, Site> _sites;
-        private readonly Dictionary<string, float> _bidders;
+        private readonly Dictionary<string, double> _bidders;
 
         public AuctionProcessor(Config config)
         {
@@ -66,13 +66,13 @@ namespace AuctionConsoleApp
             return largestBids.Select(x => x.Value).ToList();
         }
 
-        private bool IsLargerThenLargestBid(float currentBidderPrice, float bidderAdjustment, Bid largestBid)
+        private bool IsLargerThenLargestBid(double currentBidderPrice, double bidderAdjustment, Bid largestBid)
         {
             var currentLargestBidderPrice = largestBid.Price + (largestBid.Price * bidderAdjustment);
             return currentBidderPrice > currentLargestBidderPrice;
         }
 
-        private bool IsLowerThanFloor(SiteBid currentSiteBid, float currentBidderPrice)
+        private bool IsLowerThanFloor(SiteBid currentSiteBid, double currentBidderPrice)
         {
             return currentBidderPrice < _sites[currentSiteBid.SiteName].Floor;
         }

@@ -12,7 +12,7 @@ namespace AuctionConsoleApp.Models
         }
 
         [JsonProperty("adjustment")]
-        public float Adjustment
+        public double Adjustment
         {
             get; set;
         }

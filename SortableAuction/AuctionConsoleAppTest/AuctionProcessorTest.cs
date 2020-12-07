@@ -10,18 +10,18 @@ namespace AuctionConsoleAppTest
     public class AuctionProcessorTest
     {
         private const string SITE_ONE_NAME = "site1";
-        private const float SITE_ONE_FLOOR = 1;
+        private const double SITE_ONE_FLOOR = 1;
         private const string BIDDER_ONE_NAME = "AUCT";
-        private const float BIDDER_ONE_ADJUSTMENT = -0.5f;
+        private const double BIDDER_ONE_ADJUSTMENT = -0.5f;
         private const string UNIT_ONE_NAME = "unit1";
-        private const float BID_ONE_PRICE = 10;
-        private const float BID_TWO_PRICE = 20;
+        private const double BID_ONE_PRICE = 10;
+        private const double BID_TWO_PRICE = 20;
         private const string SITE_TWO_NAME = "site2";
-        private const float SITE_TWO_FLOOR = 2;
+        private const double SITE_TWO_FLOOR = 2;
         private const string BIDDER_TWO_NAME = "DUCT";
-        private const float BIDDER_TWO_ADJUSTMENT = 0.5f;
+        private const double BIDDER_TWO_ADJUSTMENT = 0.5f;
         private const string UNIT_TWO_NAME = "unit2";
-        private const float BID_THREE_PRICE = 30;
+        private const double BID_THREE_PRICE = 30;
         private const string UNKNOWN_BIDDER = "UknownBidder";
 
         [Fact]
@@ -241,7 +241,7 @@ namespace AuctionConsoleAppTest
             };
         }
 
-        private Bid CreateBid(string name, string unitName, float price)
+        private Bid CreateBid(string name, string unitName, double price)
         {
             return new Bid
             {
@@ -261,7 +261,7 @@ namespace AuctionConsoleAppTest
             };
         }
 
-        private Bidder CreateBidder(string name, float adjustment)
+        private Bidder CreateBidder(string name, double adjustment)
         {
             return new Bidder
             {
@@ -270,7 +270,7 @@ namespace AuctionConsoleAppTest
             };
         }
 
-        private Site CreateSite(string name, List<Bidder> bidders, float floor)
+        private Site CreateSite(string name, List<Bidder> bidders, double floor)
         {
             return new Site
             {
